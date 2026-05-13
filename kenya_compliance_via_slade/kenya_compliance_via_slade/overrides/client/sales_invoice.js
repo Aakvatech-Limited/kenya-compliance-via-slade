@@ -94,7 +94,10 @@ frappe.ui.form.on(parentDoctype, {
         __("eTims Actions"),
       );
 
-      if (summaryData?.hasSignificantMismatch) {
+      if (
+        frm.doc.custom_successfully_submitted &&
+        summaryData?.hasSignificantMismatch
+      ) {
         frm.add_custom_button(
           __("Correction Credit Note on eTIMS"),
           function () {
